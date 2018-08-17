@@ -12,12 +12,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.didion.jwnl.JWNL;
-import net.didion.jwnl.JWNLException;
-import net.didion.jwnl.data.IndexWord;
-import net.didion.jwnl.data.POS;
-import net.didion.jwnl.dictionary.Dictionary;
-import net.didion.jwnl.dictionary.MorphologicalProcessor;
+import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.data.IndexWord;
+import net.sf.extjwnl.data.POS;
+import net.sf.extjwnl.dictionary.Dictionary;
+import net.sf.extjwnl.dictionary.MorphologicalProcessor;
 
 /**
  * an interface to call jwnl.
@@ -55,14 +54,8 @@ public final class CJWNL {
 		STATE = false;
 		String os = System.getProperty("os.name");
 		System.setProperty("os.name", "Linux");
-		try {
-			JWNL.initialize(p_Prop);
-		} catch (JWNLException e) {
-			System.setProperty("os.name", os);
-			throw e;
-		}
 		STATE = true;
-		dictionary = net.didion.jwnl.dictionary.Dictionary.getInstance();
+		dictionary = Dictionary.getInstance(p_Prop);
 		processor = dictionary.getMorphologicalProcessor();
 		cacheADV = new Hashtable<String, String>();
 		cacheADJ = new Hashtable<String, String>();

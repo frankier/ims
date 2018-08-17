@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.didion.jwnl.JWNLException;
+import net.sf.extjwnl.JWNLException;
 
 /**
  * WordNet lemmatizer with Penn Treebank POS tag set.
