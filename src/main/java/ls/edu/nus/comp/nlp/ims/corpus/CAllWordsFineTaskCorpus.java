@@ -6,7 +6,7 @@
 package sg.edu.nus.comp.nlp.ims.corpus;
 
 import java.io.IOException;
-import java.io.Reader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 //import java.util.List;
@@ -57,7 +57,7 @@ public final class CAllWordsFineTaskCorpus extends CLexicalCorpus {
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public boolean load(Reader p_Reader) throws Exception {
+	public boolean load(InputStream p_Reader) throws Exception {
 		SAXBuilder builder = new SAXBuilder();
 		Document doc = builder.build(p_Reader);
 		Element root = doc.getRootElement();

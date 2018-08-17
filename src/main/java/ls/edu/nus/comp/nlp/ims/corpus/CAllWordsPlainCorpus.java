@@ -6,7 +6,8 @@
 package sg.edu.nus.comp.nlp.ims.corpus;
 
 import java.io.BufferedReader;
-import java.io.Reader;
+import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -51,8 +52,8 @@ public class CAllWordsPlainCorpus extends ACorpus {
 	 * @see sg.edu.nus.comp.nlp.ims.corpus.ICorpus#load(java.io.BufferedReader)
 	 */
 	@Override
-	public boolean load(Reader p_Reader) throws Exception {
-		BufferedReader reader = new BufferedReader(p_Reader);
+	public boolean load(InputStream p_Reader) throws Exception {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(p_Reader));
 		System.err.println("spliting...");
 		ArrayList<ArrayList<String>> paragraphs = new ArrayList<ArrayList<String>>();
 		String line = null;

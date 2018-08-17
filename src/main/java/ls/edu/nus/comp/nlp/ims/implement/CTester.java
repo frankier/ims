@@ -7,6 +7,7 @@ package sg.edu.nus.comp.nlp.ims.implement;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -75,7 +76,7 @@ public class CTester {
 	 *             test exception
 	 */
 	public void test(String p_XmlFile) throws Exception {
-		Reader reader = new InputStreamReader(new FileInputStream(p_XmlFile));
+		InputStream reader = new FileInputStream(p_XmlFile);
 		this.test(reader);
 		reader.close();
 	}
@@ -109,7 +110,7 @@ public class CTester {
 			instanceLexeltIDs.put(id, lexeltIDs);
 		}
 		lexeltReader.close();
-		Reader reader = new InputStreamReader(new FileInputStream(p_XmlFile));
+		InputStream reader = new FileInputStream(p_XmlFile);
 		this.test(reader, instanceLexeltIDs);
 		reader.close();
 	}
@@ -122,7 +123,7 @@ public class CTester {
 	 * @throws Exception
 	 *             test exceptoin
 	 */
-	public void test(Reader p_XmlReader) throws Exception {
+	public void test(InputStream p_XmlReader) throws Exception {
 		this.test(p_XmlReader, null);
 	}
 
@@ -136,7 +137,7 @@ public class CTester {
 	 * @throws Exception
 	 *             test exception
 	 */
-	public void test(Reader p_XmlReader, Hashtable<String, ArrayList<String>> p_InstanceLexeltIDs)
+	public void test(InputStream p_XmlReader, Hashtable<String, ArrayList<String>> p_InstanceLexeltIDs)
 			throws Exception {
 		IInstanceExtractor instExtractor = (IInstanceExtractor) Class.forName(
 				this.m_InstanceExtractorName).newInstance();

@@ -5,7 +5,7 @@
  */
 package sg.edu.nus.comp.nlp.ims.corpus;
 
-import java.io.Reader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
@@ -212,7 +212,7 @@ public abstract class ACorpus implements ICorpus {
 	 * (non-Javadoc)
 	 * @see sg.edu.nus.comp.nlp.ims.corpus.ICorpus#load(java.io.Reader)
 	 */
-	public abstract boolean load(Reader p_Reader) throws Exception;
+	public abstract boolean load(InputStream p_Reader) throws Exception;
 
 	/*
 	 * (non-Javadoc)

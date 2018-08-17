@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -82,7 +83,7 @@ public class CTrainModel {
 	 *             train exception
 	 */
 	public void train(String p_XmlFile, String p_KeyFile) throws Exception {
-		Reader xmlReader = new InputStreamReader(new FileInputStream(p_XmlFile));
+		InputStream xmlReader = new FileInputStream(p_XmlFile);
 		BufferedReader keyReader = new BufferedReader(new InputStreamReader(
 				new FileInputStream(p_KeyFile)));
 		this.train(xmlReader, keyReader);
@@ -100,7 +101,7 @@ public class CTrainModel {
 	 * @throws Exception
 	 *             train exception
 	 */
-	public void train(Reader p_XmlReader, BufferedReader p_KeyReader)
+	public void train(InputStream p_XmlReader, BufferedReader p_KeyReader)
 			throws Exception {
 		StringTokenizer tokenizer = null;
 		Hashtable<String, String[]> tags = new Hashtable<String, String[]>();
