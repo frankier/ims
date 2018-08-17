@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  *
  */
 public class CWordNetSenseIndex implements ISenseIndex {
-	protected static Pattern LEMMAPATTERN = Pattern.compile("^([^\\s]+)%");
+	protected static Pattern LEMMAPATTERN = Pattern.compile("^([^\\s]*)%");
 	protected static Pattern POSPATTERN = Pattern.compile("\\%(\\d)");
 
 	/**
